@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 
 <html> 
 
@@ -79,20 +79,25 @@
         <h3 id = 'comments'>Comments</h3>
         <table>
             <thead>
-                <tbody>
-                    <td>User
-                    <td>Comments
-                </tbody>
+               
+                    <tr> 
+                    <th>User
+                    <th>Comments
+                    </tr>
+                    
+                
             </thead>
             <tbody>
+            <tr>
                 <td>James
                 <td>Nice.
-            </tbody>
-            <tbody>
+                </tr>
+            <tr>
                 <td>SafeSpoter
                 <td>The turkey hunt sounds like alot of fun.
-            </tbody>
+            </tr>
         </table>
+        
         <h3>Do You Have A Story?</h3>
         <p>If you do please email it to me at wgill@stpaulsmobile.net and a picture if you have one! Thanks.</p>
 <a href = 'https://webcoder54.github.io/'>My Friend's Website</a>
