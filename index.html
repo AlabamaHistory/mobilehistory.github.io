@@ -5,13 +5,7 @@
 </head>
 <body>
 <style>
-.screen{
-  width:600px;
-  height:600px;
-  border-style: solid;
-  border-width: 5px;
-  border-color:rgb(0, 102, 255);
-}
+
 function checkTime(i) {
   if (i < 10) {
     i = "0" + i;
@@ -34,14 +28,107 @@ function startTime() {
 }
 startTime();
 
-</style>
-<img class= "screen" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgIDQgICAgICAcHCA0HCAcHBw8IDQgNFREWFhURExMYHSggGBolGxMTITEhMSkrLi4uFx8zODMtNygtOisBCgoKDg0NFQ8PFS0ZFRkrKysrKy0rKzc3KystKy0rLSsrKzctKzctNzcrNys3LS03LSsrKysrKysrKysrKysrLf/AABEIAKgBLAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAFhABAQEAAAAAAAAAAAAAAAAAABEB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AO3gIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAJQVBRRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQKlAEAAQFBQUFAAAAAAAAAAAAAAAAAAAAAAAAAAAAGQVkQUWBAVRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEDBABVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECCAoKAAAAAAAAAAKgAAAAAAAAAKi6KgAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFSgolUAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEGRoQaooAICIKIIKUFCqgUUQWiiUpRRKoAFABKChQAAAEoKJRKKIFFQCgCIAAoACgAIAAAgAAAKVUFFAAEAUQBRAFEEFAEBAVRARUAAAUKgg/9k=">
-<form action="https://google.com/search" method="get">
-<input type="hidden" name="sitesearch" value="" />
-<input type="text" name="q" />
-</form>
+#txt{
+	top:10px;
+	left:10px;
+}
+.phone {
+    position: relative;
+    width: 310px;
+    height: 600px;
+}
+.body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    border-radius: 42px;
+    border: 3px solid #818181;
+}
 
-<div id="time"></div>
+.f-camera {
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    width: 4%;
+    height: 2%;
+    border-radius: 100%;
+    background-color: #363636;
+}
+
+.microphone {
+    position: absolute;
+    top: 5.5%;
+    left: 40%;
+    width: 20%;
+    height: 1%;
+    border-radius: 12px;
+    background-color: #363636;
+}
+
+.p-btn {
+    position: absolute;
+    top: 15%;
+    left: -1.7%;
+    height: 5.5%;
+    width: .95%;
+    background-color: #555555;
+    border-radius: 3px 0 0 3px;
+}
+.v-btn {
+    position: absolute;
+    left: -1.7%;
+    height: 7%;
+    width: .95%;
+    background-color: #555555;
+    border-radius: 3px 0 0 3px;
+}
+
+.v-btn.t {
+    top: 25%;
+}
+
+.v-btn.b {
+    top: 33%;
+}
+
+.home-btn {
+    position: absolute;
+    top: 88%;
+    left: 41%;
+    height: 9%;
+    width: 17%;
+    background-color: #000000;
+    border-radius: 50%;
+    border: 2px solid #111111;
+    box-shadow: inset 1px 0px 3px #eeeeee;
+}
+
+.screen {
+    position: absolute;
+    top: 11.6%;
+    left: 3.5%;
+    width: 93%;
+    height: 75%;
+    background-color: #e7e7e7;
+}
+
+</style>
+<div class="container">
+        <div class="phone">
+            <div class="body">
+                <div class="f-camera"></div>
+                <div class="microphone"></div>
+                <div class="p-btn"></div>
+                <div class="v-btn t"></div>
+                <div class="v-btn b"></div>         
+                <div class="home-btn"></div>   
+                <div class="screen">
+                    <iframe class="iframe" src="https://www.google.com/search?igu=1" frameborder="0" height="100%" width="100%"></iframe>
+                </div>    
+            </div>
+        </div>
+    </div>
 
 <script>
 function startTime() {
