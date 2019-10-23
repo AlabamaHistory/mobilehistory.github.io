@@ -29,9 +29,14 @@ function startTime() {
 startTime();
 
 #txt{
-	top:100px;
-	left:100px;
+	top:55%;
+	left:44%;
 }
+#time{
+	top:55%;
+	left:66%;
+}
+
 .phone {
     position: relative;
     width: 310px;
@@ -124,13 +129,13 @@ startTime();
                 <div class="v-btn b"></div>         
                 <div class="home-btn"></div>   
                 <div class="screen">
-                    <iframe class="iframe" src="https://outlook.office.com/mail/inbox#authRedirect=true" frameborder="0" height="100%" width="100%"></iframe>
+                    <iframe class="iframe" src="https://15netclass.blackbaudondemand.com/NetClassroom7/Forms/NCShell.aspx" frameborder="0" height="100%" width="100%"></iframe>
                 </div>    
             </div>
         </div>
     </div>
 
-<script>
+<script id ="time" >
 function startTime() {
   var today = new Date();
   var h = today.getHours();
@@ -152,6 +157,11 @@ function checkTime(i) {
 <body onload="startTime()">
 
 <div id="txt"></div>
+
+<form action="/action_page.php">
+  Username: <input type="text" name="usrname"><br>
+  <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>
