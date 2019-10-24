@@ -6,6 +6,13 @@
 <body>
 <style>
 
+#txt{
+	top:65px;
+	left:25px;
+	position:absolute;
+	z-index:4;
+}
+
 function checkTime(i) {
   if (i < 10) {
     i = "0" + i;
@@ -28,27 +35,22 @@ function startTime() {
 }
 startTime();
 
-#txt{
-	top:55%;
-	left:44%;
-}
-#time{
-	top:55%;
-	left:66%;
-}
+
+
 
 .phone {
     position: relative;
-    width: 310px;
+    width: 500px;
     height: 600px;
 }
 .body {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 320px;
+    height: 620px;
     background-color: #000000;
-    border-radius: 42px;
+    border-radius: 45px;
     border: 3px solid #818181;
+	z-index:1;
 }
 
 .f-camera {
@@ -116,6 +118,17 @@ startTime();
     width: 93%;
     height: 75%;
     background-color: #e7e7e7;
+	z-index:2;
+}
+.topbar {
+    position: absolute;
+    top: 8.5%;
+    left: 3.5%;
+    width: 93%;
+    height: 3%;
+    background-color: #e7e7e7;
+	z-index:3;
+	background-color:rgb(0, 204, 255);
 }
 
 </style>
@@ -126,15 +139,15 @@ startTime();
                 <div class="microphone"></div>
                 <div class="p-btn"></div>
                 <div class="v-btn t"></div>
-                <div class="v-btn b"></div>         
-                <div class="home-btn"></div>   
+                <div class="v-btn b"></div>
+				           
                 <div class="screen">
-                    <iframe class="iframe" src="https://www.coolmathgames.com/" frameborder="0" height="100%" width="100%"></iframe>
+                    <iframe class="iframe" src="https://mobilehistory.github.io/"></iframe>
                 </div>    
+				<div class="topbar"></div>
             </div>
         </div>
     </div>
-<p>WE LOVE HENRY!!</p>	
 
 <script id ="time" >
 function startTime() {
@@ -158,11 +171,6 @@ function checkTime(i) {
 <body onload="startTime()">
 
 <div id="txt"></div>
-
-<form action="/action_page.php">
-  Username: <input type="text" name="usrname"><br>
-  <input type="submit" value="Submit">
-</form>
 
 </body>
 </html>
