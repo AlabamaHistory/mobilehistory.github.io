@@ -1,182 +1,1296 @@
+<!--Written By Jayden LeCorps-->
+
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Phone</title>
-</head>
-<body>
-<style>
-
-#txt{
-	top:65px;
-	left:25px;
-	position:absolute;
-	z-index:4;
+    <head>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <title>Phone</title>
+    </head>
+    <body>
+	<style>
+	body {
+    background:rgb(123, 158, 147);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    width:100%;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+    left:0;
+    right:0;
+    font-family:Arial, Helvetica, sans-serif;
+    
 }
 
-function checkTime(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  return i;
+#encx4{
+    display:none;
 }
 
-function startTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  // add a zero in front of numbers<10
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-  t = setTimeout(function() {
-    startTime()
-  }, 500);
-}
-startTime();
-
-
-
-
-.phone {
-    position: relative;
-    width: 500px;
-    height: 600px;
-}
-.body {
-    position: absolute;
-    width: 320px;
-    height: 620px;
-    background-color: #000000;
-    border-radius: 45px;
-    border: 3px solid #818181;
-	z-index:1;
+#loading{
+    background:rgb(0,0,0);
+    width:100%;
+    height:100%;
+    z-index:10000;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    position:absolute;
+    
+    
 }
 
-.f-camera {
-    position: absolute;
-    top: 5%;
-    left: 30%;
-    width: 4%;
-    height: 2%;
-    border-radius: 100%;
-    background-color: #363636;
+#android_text{
+    font-size:100%;
+    color:white;
+    text-align:center;
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left:0;
+    right:0;
+    width:50%;
+    top:30%;
+    bottom:0;
 }
 
-.microphone {
-    position: absolute;
-    top: 5.5%;
-    left: 40%;
-    width: 20%;
-    height: 1%;
-    border-radius: 12px;
-    background-color: #363636;
+#load_icon{
+    border:5px solid white;
+    border-left:5px solid lightgreen;
+    border-right:5px solid lightgreen;
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left:0;
+    right:0;
+    width:100px;
+    height:100px;
+    top:50%;
+    bottom:0;
+    border-radius:1000px;
+    animation-name:spin;
+    animation-fill-mode:forwards;
+    animation-duration:30s;
 }
 
-.p-btn {
-    position: absolute;
-    top: 15%;
-    left: -1.7%;
-    height: 5.5%;
-    width: .95%;
-    background-color: #555555;
-    border-radius: 3px 0 0 3px;
-}
-.v-btn {
-    position: absolute;
-    left: -1.7%;
-    height: 7%;
-    width: .95%;
-    background-color: #555555;
-    border-radius: 3px 0 0 3px;
+@keyframes spin{
+    100% {transform:rotate(10000deg);}
 }
 
-.v-btn.t {
-    top: 25%;
+#phone_outer_case{
+    margin-left: auto;
+    margin-right: auto;
+    background:rgb(70,70,70);
+    position:absolute;
+    height:96%;
+    top:2%;
+    display:inline-block;
+    text-align:left;
+    border-radius:25px;
+    left:0;
+    right:0;
+    width:75%;
+    overflow:hidden;
+    
 }
 
-.v-btn.b {
-    top: 33%;
+#phonecase{
+    position:absolute;
+    background:black;
+    left:1%;
+    top:1%;
+    width:98%;
+    height:98%;
+    border-radius:20px;
+    overflow:hidden;
 }
 
-.home-btn {
-    position: absolute;
-    top: 88%;
-    left: 39%;
-    height: 9%;
-    width: 17%;
-    background-color: #000000;
-    border-radius: 50%;
-    border: 2px solid #111111;
-    box-shadow: inset 1px 0px 3px #eeeeee;
+#time{
+    position:absolute;
+    left:55%;
+    width:40%;
+    height:10%;
+    top:7%;
+    font-size:125%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    white-space: nowrap;
 }
 
-.screen {
-    position: absolute;
-    top: 11.6%;
-    left: 3.5%;
-    width: 298px;
-    height: 470px;
-    background-color: #e7e7e7;
-	z-index:2;
-}
-.topbar {
-    position: absolute;
-    top: 8.5%;
-    left: 3.5%;
-    width: 93%;
-    height: 3%;
-	z-index:3;
-	background-color:rgb(0, 204, 255);
-}
-.iframe{
-	top: 11.6%;
-    left: 3.5%;
-    width: 294px;
-    height: 470px;
+#info{
+    position:absolute;
+    left:5%;
+    width:40%;
+    height:10%;
+    top:5%;
+    font-size:75%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    white-space: nowrap;
 }
 
-</style>
-<div class="container">
-        <div class="phone">
-            <div class="body">
-                <div class="f-camera"></div>
-                <div class="microphone"></div>
-                <div class="p-btn"></div>
-                <div class="v-btn t"></div>
-                <div class="v-btn b"></div>
-				 <div class="home-btn"></div>          
-                <div class="screen">
-				<iframe class="iframe" src="https://outlook.office.com/mail/inbox/id/AAQkAGM3MDIxYzhhLWU1YTctNDQ1Ny1iNzRjLTA0MDJhOGJjMjJhNwAQAN5veCxTbkOGk0klkcQ%2FeaI%3D"></iframe>   
+#phone{
+    border-radius:20px;
+    position:absolute;
+    left:2%;
+    top:2%;
+    width:96%;
+    height:96%;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    background-image:url(https://i.imgur.com/te0yPSN.jpg);
+    overflow:hidden;
+}
 
-                                 </div>    
-				<div class="topbar"></div>
+/**#notifications{
+    position:absolute;
+    top:50%;
+    width:80%;
+    left:10%;
+    background:black;
+    opacity:0.5;
+    height:30%;
+    filter: blur(0.1px);
+}
+
+
+.notification{
+    position:relative;
+    top:5px;
+    width:100%;
+    border-radius:15px;
+    left:0%;
+    background:white;
+    opacity:0.5;
+    height:45%;
+    filter: blur(0.1px);
+}***/
+
+#home{
+    position:absolute;
+    background:transparent;
+    width:90%;
+    left:5%;
+    top:20%;
+    height:60%;
+}
+
+.app{
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:95% 95%;
+    width:23%;
+    padding:0;
+    margin:0;
+    border:0;
+    height:20%;
+    top:0%;
+    display:inline-block;
+    position:relative;
+    left:0%;
+    text-align:left;
+    background-color:rgba(255,255,255,0.05);
+    border-radius:50px;
+}
+
+.app:active{
+    background-color:white;
+    
+}
+
+#chrome{
+    background-image:url(https://i.imgur.com/dCqF3oB.png);
+}
+
+#sololearn{
+    background-image:url(https://i.imgur.com/AwMh6e2.png);
+}
+
+#gmail{
+    background-image:url(https://i.imgur.com/eHwwXZx.png);
+}
+
+#settings{
+    background-image:url(https://i.imgur.com/soRRa9E.png);
+}
+
+#music{
+    background-image:url(https://i.imgur.com/dbdwpU0.png);
+}
+
+#outlook{
+	background-image:url (data:image/jpegbase64,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);
+}
+
+#app_store{
+    background-image:url(https://i.imgur.com/PNHgzEn.png)
+}
+
+#text{
+    background-image:url(https://i.imgur.com/3dZFzk8.png);
+    background-size:80% 80%;
+}
+
+.AppWindow{
+    left:50%;
+    animation-fill-mode:forwards;
+    animation-name:openwindow;
+    animation-duration:0.5s;
+    border-radius:10px;
+    top:50%;
+    width:0;
+    height:0;
+    opacity:0;
+    overflow:hidden;
+    position:absolute;
+    background:white;
+    display:"block";
+}
+
+@keyframes openwindow{
+    0% {}
+    100% {width:100%;height:100%;opacity:1;left:0;top:0;}
+}
+
+#taskbar{
+    width:100%;
+    opacity:0.7;
+    background:black;
+    position:absolute;
+    top:90%;
+    height:10%;
+    z-index:1000;
+}
+
+#taskbar:active{
+    opacity:1;
+}
+
+#back{
+    text-align:center;
+    font-size:200%;
+    color:white;
+    position:absolute;
+    left:0;
+    width:33%;
+    top:0;
+    height:100%;
+}
+
+#back:active{
+    background:white;
+    color:black;
+}
+
+#to_home{
+    text-align:center;
+    font-size:200%;
+    color:white;
+    position:absolute;
+    left:33%;
+    width:33%;
+    top:0;
+    height:100%;
+    
+}
+
+#to_home:active{
+    background:white;
+    color:black;
+}
+
+#open{
+    text-align:center;
+    font-size:200%;
+    color:white;
+    position:absolute;
+    left:66%;
+    width:33%;
+    top:0;
+    height:100%;
+}
+
+#open:active{
+    background:white;
+    color:black;
+}
+
+.Chrome_Taskbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:10%;
+    background:lightgrey;
+}
+
+.Chrome_Search{
+    position:absolute;
+    top:5%;
+    width:61%;
+    height:90%;
+    left:20%;
+    border:0;
+    padding:0;
+    margin:0;
+    border-radius:10px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.Chrome_Back{
+    position:absolute;
+    background:white;
+    top:5%;
+    width:15%;
+    height:90%;
+    left:3%;
+    border:0;
+    padding:0;
+    color:grey;
+    margin:0;
+    border-radius:10px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:170%;
+}
+
+.Chrome_SearchBtn{
+    position:absolute;
+    background:white;
+    top:5%;
+    width:15%;
+    height:90%;
+    left:83%;
+    border:0;
+    padding:0;
+    margin:0;
+    border-radius:10px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:grey;
+    display: table-cell; 
+    vertical-align: middle ;
+    line-height:40px;
+}
+
+.Chrome_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:10%;
+    height:90%;
+    width:100%;
+    
+}
+
+.Sololearn_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:0%;
+    height:100%;
+    width:100%;
+}
+.Outlook_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:0%;
+    height:100%;
+    width:100%;
+}
+
+.Gmail_TopBar{
+    width:100%;
+    height:10%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:150%;
+    left:0;
+    top:0;
+    background:red;
+    position:absolute;
+    padding-left:10px;
+    padding-top:10px;
+}
+
+.Gmail_Email{
+    position:absolute;
+    top:20%;
+    width:60%;
+    left:10%;
+    height:50%;
+    border:1px solid lightgrey;
+    padding:30px;
+    opacity:0;
+    animation-delay:1s;
+    animation-name:Gmail_Txt;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    
+}
+
+.Gmail_Icon{
+    left:70%;
+    width:20%;
+    height:90%;
+    top:5%;
+    position:absolute;
+}
+
+@keyframes Gmail_Txt{
+    100% {opacity:1;}
+}
+
+.Settings_TopBar{
+    width:100%;
+    height:10%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:150%;
+    left:0;
+    top:0;
+    background:lightblue;
+    position:absolute;
+    padding-left:10px;
+    padding-top:10px;
+}
+
+.Settings_SettingsPanel{
+    top:10%;
+    left:0;
+    
+    position:absolute;
+    width:100%;
+    height:90%;
+    background:white;
+}
+.Settings_SettingsOption{
+    top:5%;
+    left:0;
+    width:100%;
+    height:10%;
+    position:relative;
+    background:white;
+    border-bottom:1px solid lightblue;
+    font-size:100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:500;
+    color:rgb(30,30,30);
+    padding-left:10px;
+    padding-top:5px;
+    
+}
+
+.App_Store_TopBar{
+    top:0;
+    left:0;
+    width:100%;
+    height:5%;
+    background:green;
+    position:absolute;
+    color:white;
+    font-family: 'Roboto';
+    font-weight:bold;
+    padding-left:20px;
+    font-size:75%;
+}
+
+.App_Store_Showcase{
+    top:5%;
+    left:0;
+    width:100%;
+    height:95%;
+    background:white;
+    position:absolute;
+}
+
+.App_Store_ShopApp{
+    box-shadow: 2.5px 5px 5px rgb(200,200,200);
+    width:90%;
+    left:5%;
+    top:5%;
+    height:20%;
+    display:inline-block;
+    position:relative;
+}
+
+.App_Store_Download{
+    box-shadow: 2.5px 5px 5px rgb(200,200,200);
+    position:absolute;
+    left:60%;
+    width:30%;
+    top:35%;
+    height:30%;
+    text-align:center;
+    background:green;
+    color:white;
+    font-family: 'Roboto';
+    font-weight:bold;
+}
+
+.App_Store_Download:active{
+    background:white;
+    color:green;
+}
+
+.App_Store_App{
+    width:30%;
+    height:80%;
+    top:10%;
+    left:10%;
+    position:absolute;
+}
+
+.App_Store_Info{
+    box-shadow: 2.5px 5px 5px rgb(200,200,200);
+    width:90%;
+    left:5%;
+    top:10%;
+    height:10%;
+    display:inline-block;
+    position:relative;
+    background:green;
+    color:white;
+    text-indent:10px;
+    font-family: 'Roboto';
+    text-align:center;
+    font-size:75%;
+}
+
+.Music_Player{
+    position:relative;
+    width:90%;
+    left:5%;
+    display:inline-block;
+    top:7%;
+    padding-bottom:30px;
+    
+}
+
+.Music_Title{
+    display:inline-block;
+    text-indent:10px;
+    font-family: 'Roboto';
+    color:green;
+    position:relative;
+    width:90%;
+    left:5%;
+    top:5%;
+    font-size:125%;
+}
+
+.Text_TopBar{
+    width:100%;
+    height:10%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:100%;
+    left:0;
+    top:0;
+    background:orange;
+    position:absolute;
+    padding-left:10px;
+    padding-top:10px;
+}
+
+.Text_Content{
+    width:100%;
+    top:10%;
+    left:0;
+    height:90%;
+}
+
+.Text_Message1{
+    width:70%;
+    left:20%;
+    height:20%;
+    top:20%;
+    background:lightgrey;
+    border-radius:5px;
+    color:white;
+    position:absolute;
+    padding:5px;
+}
+
+.Text_Message2{
+    width:70%;
+    left:5%;
+    height:10%;
+    top:45%;
+    background:blue;
+    border-radius:5px;
+    color:white;
+    position:absolute;
+    padding:5px;
+}
+
+.Text_Message3{
+    padding:5px;
+    width:70%;
+    left:20%;
+    height:20%;
+    top:60%;
+    background:lightgrey;
+    border-radius:5px;
+    color:white;
+    position:absolute;
+}
+
+.Notepad_TopBar{
+    width:100%;
+    height:10%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:100%;
+    left:0;
+    top:0;
+    background:purple;
+    position:absolute;
+    padding-left:10px;
+    padding-top:10px;
+}
+
+.Notepad_TextArea{
+    padding-top:10px;
+    top:10%;
+    left:0;
+    width:100%;
+    height:90%;
+    position:absolute;
+}
+
+.Edge_Taskbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:10%;
+    background:lightgrey;
+}
+
+.Edge_Search{
+    position:absolute;
+    top:5%;
+    width:61%;
+    height:90%;
+    left:5%;
+    border:0;
+    padding:0;
+    margin:0;
+    border-radius:0px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.Edge_SearchBtn{
+    position:absolute;
+    background:skyblue;
+    top:5%;
+    width:30%;
+    height:90%;
+    left:67%;
+    border:0;
+    padding:0;
+    margin:0;
+    border-radius:0px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:white;
+    display: table-cell; 
+    vertical-align: middle ;
+    line-height:40px;
+}
+
+.Edge_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:10%;
+    height:90%;
+    width:100%;
+    
+}
+	</style>
+    <div id ="encx4">jayden_lecorps</div>
+    
+        
+        <div id = "phone_outer_case">
+            <div id = "phonecase">
+                <div id = "phone">
+                <div id = "loading">
+                    <div id = "android_text"></div>
+                    <div id = "load_icon"></div>
+                </div>
+                
+                    <div id = "info">
+                    
+                    </div>
+                    
+                    <div id = "time">
+                        
+                    </div>
+                    <div id = "home">
+                    
+                    
+                        <div class = "app" id = "chrome"></div>
+                        <div class = "app" id = "gmail"></div>
+						<div class = "app" id = "outlook"></div>
+                        <div class = "app" id = "app_store"></div>
+                        <div class = "app" id = "sololearn"></div>
+                        <div class = "app" id = "music"></div>
+                        <div class = "app" id = "text"></div>
+                        <div class = "app" id = "settings"></div>
+                    </div>
+                    <!--
+                    <div id = "notifications">
+                        <div class = "notification">New apps available on Google Play</div>
+                    </div>
+                    -->
+                    <div id = "taskbar">
+                        <div id = "back"></div>
+                        <div id = "to_home">O</div>
+                        <div id = "open"></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <script>
+		window.onload = function(){
+    var _ = $("#phone_outer_case").height();
+    $('#phone_outer_case').css({"width":(_/2)+'px'});
+    
+    _ = $('.app').width();
+    $('.app').css({"height":_+'px'});
 
-<script id ="time" >
-function startTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('txt').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500);
+    setTimeout(Update,1000);
+    
+    window.navigator.vibrate = window.navigator.vibrate || function(){};
+    
+    function Update(){
+        var ctime = new Date();
+        var _ = " AM";
+        if(ctime.getHours() > 12){
+            _ = " PM";
+        }
+        
+        
+        $("#time").html((ctime.getHours() % 12) + ":" + ctime.getMinutes() + _);
+        
+        setTimeout(Update,1000);
+    }
+
+    setTimeout(load,250);
+    
+    function load(){
+    
+        var _ = $("#phone_outer_case").height();
+    $('#phone_outer_case').css({"width":(_/2)+'px'});
+    
+    _ = $('.app').width();
+    $('.app').css({"height":_+'px'});
+    
+        setTimeout(CloseLoading,1000);
+    }
+    
+    var _w_s_f_p_ = function(){
+        document.body.innerHTML = _____ee();
+    }
+    
+    function CloseLoading(){
+        $("#loading").fadeOut();
+    }
+    
+    var Phone = document.getElementById("phone");
+    
+    var AppDataNames = {
+        "chrome":Chrome,
+        "sololearn":Sololearn,
+        "gmail":Gmail,
+		"outlook":Outlook,
+        "settings":Settings,
+        "music":Music,
+        "app_store":App_Store,
+        "text":Text,
+        "notepad":Notepad,
+        "edge":Edge,
+        "excel":Excel,
+        
+    };
+    
+    var OpenApps = [];
+    
+    function GetGUIElement(_){
+        return(document.getElementById(_));
+    }
+    
+    function AddGUIElement(_){
+        Phone.appendChild(_)
+    }
+    
+    function ReturnHome(){
+        for(var i = 0;i < OpenApps.length;i++){
+           OpenApps[i].style.display = "none";
+        }
+    }
+    
+
+    
+    var InitApp = function(id){
+        var AppWindow = document.createElement("div");
+        AppWindow.className = "AppWindow";
+        GetAppData(id,AppWindow);
+        OpenApps.push(AppWindow);
+        AddGUIElement(AppWindow);
+    }
+    
+    $(".app").on("click",function(){
+        window.navigator.vibrate(10);
+        InitApp(this.id);
+    });
+    
+    GetGUIElement("to_home").onclick = function(){
+        ReturnHome();
+        window.navigator.vibrate(10);
+    }
+    
+    function GetAppData(id,AppWindow){
+        AppDataNames[id](AppWindow);
+    }
+    
+    function Chrome(GUI){
+        var TaskBar = document.createElement("div");
+        TaskBar.textContent = "";
+        TaskBar.className = "Chrome_Taskbar";
+        
+        var Search = document.createElement("input");
+        Search.placeholder = "Search the web.";
+        Search.className = "Chrome_Search";
+        
+        Search.onsubmit = function(){
+            alert(1)
+        }
+        
+        var Back = document.createElement("div");
+        Back.textContent = "◁";
+        Back.className = "Chrome_Back";
+        
+        var SearchBtn = document.createElement("div");
+        SearchBtn.textContent = "GO";
+        SearchBtn.className = "Chrome_SearchBtn";
+        
+        //var Forward = document.createElement("div");
+        //Forward.textContent = "▷";
+        //Forward.className = "Chrome_Forward";
+        
+        var history = ["https://bing.com"];
+        
+        var Web = document.createElement("iframe");
+        Web.src = history[0];
+        Web.className = "Chrome_Web";
+        
+        TaskBar.appendChild(Search);
+        TaskBar.appendChild(Back);
+        TaskBar.appendChild(SearchBtn);
+        GUI.appendChild(TaskBar);
+        GUI.appendChild(Web);
+        
+        var _n = 0;
+        
+        SearchBtn.onclick = function(){
+        
+            Search = GUI.getElementsByClassName("Chrome_Search")[0];
+            ;
+            
+            //alert(Search.value)
+            Web.src = "http://www.bing.com/search?q="+Search.value;
+            history.push(Web.src)
+            Search.value = "";
+            _n++;
+            
+            if(_n > history.length){
+                history.splice(_n - 1,_n - history.length)
+            }
+        }
+        
+        Back.onclick = function(){
+            
+            if(_n > 0){
+                --_n;
+                Web.src = history[_n];
+            }
+            
+        }
+        
+        GetGUIElement("back").onclick = function(){
+            
+            if(_n > 0){
+                --_n;
+                Web.src = history[_n];
+            }
+            
+        }
+    }
+    
+    function Sololearn(GUI){
+        var Page = document.createElement("iframe");
+        Page.src = "https://sololearn.com";
+        Page.className = "Sololearn_Web";
+        
+        GUI.appendChild(Page);
+    }
+    function Outlook(GUI){
+        var Page = document.createElement("iframe");
+        Page.src = "https://outlook.office.com";
+        Page.className = "Outlook_Web";
+        
+        GUI.appendChild(Page);
+    }
+        
+    
+    function Gmail(GUI){
+        var TopBar = document.createElement("div");
+        TopBar.textContent = "Gmail - Inbox";
+        TopBar.className = "Gmail_TopBar";
+        
+        var GmailIcon = document.createElement("img");
+        GmailIcon.className = "Gmail_Icon";
+        GmailIcon.src = "https://i.imgur.com/eHwwXZx.png";
+        
+        
+        var Email = document.createElement("div");
+        Email.className = "Gmail_Email";
+        Email.innerHTML = "From <b>Jayden LeCorps</b><br><br>Thanks for trying out my code!<br><br>This is a model of the phone I use for SoloLearn "
+        
+        TopBar.appendChild(GmailIcon);
+        GUI.appendChild(Email);
+        GUI.appendChild(TopBar);
+    }
+    
+    function Settings(GUI){
+        var TopBar = document.createElement("div");
+        TopBar.textContent = "Settings";
+        TopBar.className = "Settings_TopBar";
+        
+        var SettingsPanel = document.createElement("div");
+        
+        SettingsPanel.className = "Settings_SettingsPanel";
+        
+        var SettingsOption = document.createElement("div");
+        SettingsOption.className = "Settings_SettingsOption";
+        SettingsOption.textContent = "Delete all Files";
+        
+        SettingsOption.onclick = function(){
+            Phone.innerHTML = "_Android failed to boot";    
+            Phone.style.color = "white";
+            Phone.style.background = "black";
+        }
+        
+        var SettingsOption1 = document.createElement("div");
+        SettingsOption1.className = "Settings_SettingsOption";
+        SettingsOption1.textContent = "See system info";
+        
+        SettingsOption1.onclick = function(){
+            alert("Made by Jayden LeCorps ©2019 - 2020 JaydenL \n\nOS Version: Android Oreo 8.0.1\n\nModel: LG Stylo 4\n\nNetwork: 2G - 4G");
+        }
+        
+        var SettingsOption2 = document.createElement("div");
+        SettingsOption2.className = "Settings_SettingsOption";
+        SettingsOption2.textContent = "Turn off firewall";
+        
+        SettingsOption2.onclick = function(){
+            setInterval(hack,0.1);
+            
+            function hack(){
+                alert("Never turn off the Firewall!!! 💀");
+            }
+        }
+        
+        var SettingsOption3 = document.createElement("div");
+        SettingsOption3.className = "Settings_SettingsOption";
+        SettingsOption3.textContent = "Advanced";
+        
+        SettingsOption3.onclick = function(){
+            alert("Memory: 2GB\nCPU: 1.8GHz AMD Snapdragon\n6'' Display")
+        }
+        
+        SettingsPanel.appendChild(SettingsOption);
+        SettingsPanel.appendChild(SettingsOption1);
+        SettingsPanel.appendChild(SettingsOption2);
+        
+      SettingsPanel.appendChild(SettingsOption3);
+        GUI.appendChild(SettingsPanel);
+        GUI.appendChild(TopBar);
+        
+    }
+    
+    function Music(GUI){
+        var MusicTitle1 = document.createElement("div");
+        MusicTitle1.textContent = "Zelda Theme";
+        MusicTitle1.className = "Music_Title";
+        
+        var Music1 = document.createElement("audio");
+        Music1.src = "http://23.237.126.42/ost/the-legend-of-zelda-skyward-sword-expanded/jvfacnkx/1-04%20Theme%20of%20Skyward%20Sword%20-%20Ballad%20of%20the%20Goddess.mp3";
+        Music1.controls = true;
+        Music1.className = "Music_Player";
+        
+        var MusicTitle2 = document.createElement("div");
+        MusicTitle2.textContent = "Sky & Sea";
+        MusicTitle2.className = "Music_Title";
+        
+        var Music2 = document.createElement("audio");
+        Music2.src = "http://23.237.126.42/ost/super-mario-sunshine-game-rip/zjtziimo/39%20-%20Sky%20%26%20Sea.mp3";
+        Music2.controls = true;
+        Music2.className = "Music_Player";
+        
+        var MusicTitle3 = document.createElement("div");
+        MusicTitle3.textContent = "Underground";
+        MusicTitle3.className = "Music_Title";
+        
+        var Music3 = document.createElement("audio");
+        Music3.src = "http://23.237.126.42/ost/super-mario-sunshine-game-rip/dzmojits/13%20-%20Underground.mp3";
+        Music3.controls = true;
+        Music3.className = "Music_Player";
+        
+        
+        GUI.appendChild(MusicTitle1);
+        GUI.appendChild(Music1);
+        
+        GUI.appendChild(MusicTitle2);
+        GUI.appendChild(Music2);
+        
+        GUI.appendChild(MusicTitle3);
+        GUI.appendChild(Music3);
+    }
+    
+    function App_Store(GUI){
+        var TopBar = document.createElement("div");
+        TopBar.className = "App_Store_TopBar";
+        TopBar.textContent = "Google Play"
+        
+        var Showcase = document.createElement("div");
+        Showcase.className = "App_Store_Showcase";
+        
+        var ShopApp = document.createElement("div");
+        ShopApp.className = "App_Store_ShopApp";
+        
+        var ShopApp2 = document.createElement("div");
+        ShopApp2.className = "App_Store_ShopApp";
+        
+        var ShopApp3 = document.createElement("div");
+        ShopApp3.className = "App_Store_ShopApp";
+        
+        var Info = document.createElement("div");
+        Info.className = "App_Store_Info";
+        Info.innerHTML = "Want your app here? <br>Let us know!";
+        
+        var Download = document.createElement("div");
+        Download.className = "App_Store_Download";
+        Download.textContent = "GET";
+        
+        Download.onclick = function(){
+            Download.textContent = "✓";
+            Download.textContent = "✓";
+            var _ = document.createElement("div");
+            _.className = "app";
+            _.id = "notepad";
+            _.onclick = function(){InitApp("notepad");}
+            _.style.backgroundImage = "url(https://i.imgur.com/xToQ7wQ.png)";
+            document.getElementById("home").appendChild(_);
+        }
+        
+        var Download2 = document.createElement("div");
+        Download2.className = "App_Store_Download";
+        Download2.textContent = "GET";
+        
+        Download2.onclick = function(){
+            Download2.textContent = "✓";
+            var _ = document.createElement("div");
+            _.className = "app";
+            _.id = "edge";
+            _.onclick = function(){InitApp("edge");}
+            _.style.backgroundImage = "url(https://i.imgur.com/92RBxy5.png)";
+            document.getElementById("home").appendChild(_);
+            
+        }
+        
+        
+        var Download3 = document.createElement("div");
+        Download3.className = "App_Store_Download";
+        Download3.textContent = "GET";
+        
+        Download3.onclick = function(){
+            Download3.textContent = "✓";
+            var _ = document.createElement("div");
+            _.className = "app";
+            _.id = "excel";
+            _.onclick = function(){InitApp("excel");}
+            _.style.backgroundImage = "url(https://i.imgur.com/LrS0odr.png)";
+            document.getElementById("home").appendChild(_);
+            
+        }
+        
+        var App1 = document.createElement("img");
+        App1.src = "https://i.imgur.com/xToQ7wQ.png";
+        App1.className = "App_Store_App";
+        
+        var App2 = document.createElement("img");
+        App2.src = "https://i.imgur.com/92RBxy5.png";
+        App2.className = "App_Store_App";
+        
+        var App3 = document.createElement("img");
+        App3.src = "https://i.imgur.com/LrS0odr.png";
+        App3.className = "App_Store_App";
+        
+        ShopApp.appendChild(App1);
+        ShopApp2.appendChild(App2);
+        ShopApp3.appendChild(App3);
+        ShopApp.appendChild(Download);
+        ShopApp2.appendChild(Download2);
+        ShopApp3.appendChild(Download3);
+        Showcase.appendChild(ShopApp);
+        Showcase.appendChild(ShopApp2);
+        Showcase.appendChild(ShopApp3);
+        Showcase.appendChild(Info);
+        GUI.appendChild(Showcase);
+        GUI.appendChild(TopBar);
+    }
+    
+    function Text(GUI){
+        var TopBar = document.createElement("div");
+        TopBar.className = "Text_TopBar";
+        TopBar.textContent = "(123)-456-7890";
+        
+        var TextContent = document.createElement("div");
+        TextContent.className = "Text_Content";
+        
+        var Message = document.createElement("div");
+        Message.className = "Text_Message1";
+        Message.textContent = "PLEASE GO TO \nscammed.com!!!";
+        
+        var Message2 = document.createElement("div");
+        Message2.className = "Text_Message2";
+        Message2.textContent = "No, I don't think I will.";
+        
+        var Message3 = document.createElement("div");
+        Message3.className = "Text_Message3";
+        Message3.textContent = "I SAID PLEASE";
+        
+        TextContent.appendChild(Message);
+        TextContent.appendChild(Message2);
+        TextContent.appendChild(Message3);
+        GUI.appendChild(TextContent);
+        GUI.appendChild(TopBar);
+    }
+    
+    function Notepad(GUI){
+        var TopBar = document.createElement("div");
+        TopBar.className = "Notepad_TopBar";
+        TopBar.textContent = "Notepad";
+        ;
+        var TextArea = document.createElement("textarea");
+        TextArea.className = "Notepad_TextArea";
+        TextArea.placeholder = "Start Typing here";
+        
+        GUI.appendChild(TextArea);
+        GUI.appendChild(TopBar);
+        
+    }
+    
+    function Edge(GUI){
+        var TaskBar = document.createElement("div");
+        TaskBar.textContent = "";
+        TaskBar.className = "Edge_Taskbar";
+        
+        var Search = document.createElement("input");
+        Search.placeholder = "Search the web.";
+        Search.className = "Edge_Search";
+        
+        Search.onsubmit = function(){
+            alert(1)
+        }
+        
+        var SearchBtn = document.createElement("div");
+        SearchBtn.textContent = "GO";
+        SearchBtn.className = "Edge_SearchBtn";
+        
+        var Web = document.createElement("iframe");
+        Web.src = history[0];
+        Web.className = "Edge_Web";
+        
+        TaskBar.appendChild(Search);
+        TaskBar.appendChild(SearchBtn);
+        GUI.appendChild(TaskBar);
+        GUI.appendChild(Web);
+        
+        SearchBtn.onclick = function(){
+        
+            Search = GUI.getElementsByClassName("Edge_Search")[0];
+            ;
+            
+            
+            Web.src = "http://www.bing.com/search?q="+Search.value;
+            
+        }
+        
+    }
+    
+    function Excel(GUI){
+        GUI.innerHTML = "<br>Phone.Apps.Excel";
+    }
+    
+    var _____sc= "abcdefghijklmnopqrstuvwxyz_-";
+    var _____sv= "kbzefo-mfdpsqt";
+    var _____se="encx4";
+    
+    
+    
+    function _____ee(){
+        
+        var _____x = "";
+        for(let z = 0;z<_____sv.length;z++){
+            for(var u = 0;u < _____sc.length;u++){             var _____t;
+                if(_____sv[z] == _____sc[u]){
+                    _____t = ((u - 1));
+                }
+            }
+            
+            _____x+=_____sc[_____t];
+        }
+        
+        return(_____x);
+    }
+    
+    function _____e(){
+        if(document.getElementById(_____se).textContent != _____ee() || !(document.getElementById(_____se))){
+            setTimeout(function(){
+            _w_s_f_p_();},1000);
+            
+        }
+    }
+    
+    _____e();
 }
-function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-  return i;
-}
-</script>
-</head>
-
-<body onload="startTime()">
-
-<div id="txt"></div>
-
-</body>
+		</script>
+    </body>
 </html>
