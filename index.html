@@ -1,96 +1,1278 @@
+<!--Written By Jayden LeCorps-->
+
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Alabama History</title>
-</head>
-<body>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <title>Android Phone in CSS</title>
+    </head>
+    <body>
 <style>
+body {
+    background:rgb(123, 158, 147);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    width:100%;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+    left:0;
+    right:0;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
 
-                                   
-#h1{
-               text-align:center;
-           }
-         body{
-               margin:0;
-			   padding:0;
-			   background-size: cover;
-			   background-position:center;
-			   background-color:rgb(25, 148, 320);
-			              }
-          p{
-              font-family:;
-			  padding:20px;
-          } 
-		  #meh{
-		  	padding:20px;
-		  }
-		  .bh{
-		  	padding:20px;
-		  }   
-		  h2{
-		  	padding:20px;
-		  }             
-		  h3{
-		  	padding:20px;
-		  } 
+#encx4{
+    display:none;
+}
+
+#loading{
+    background:rgb(0,0,0);
+    width:100%;
+    height:100%;
+    z-index:10000;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    position:absolute;
+    
+    
+}
+
+#android_text{
+    font-size:100%;
+    color:white;
+    text-align:center;
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left:0;
+    right:0;
+    width:50%;
+    top:30%;
+    bottom:0;
+}
+
+#load_icon{
+    border:5px solid white;
+    border-left:5px solid lightgreen;
+    border-right:5px solid lightgreen;
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left:0;
+    right:0;
+    width:100px;
+    height:100px;
+    top:50%;
+    bottom:0;
+    border-radius:1000px;
+    animation-name:spin;
+    animation-fill-mode:forwards;
+    animation-duration:30s;
+}
+
+@keyframes spin{
+    100% {transform:rotate(10000deg);}
+}
+
+#phone_outer_case{
+    margin-left: auto;
+    margin-right: auto;
+    background:rgb(70,70,70);
+    position:absolute;
+    height:96%;
+    top:2%;
+    display:inline-block;
+    text-align:left;
+    border-radius:25px;
+    left:0;
+    right:0;
+    width:75%;
+    overflow:hidden;
+    
+}
+
+#phonecase{
+    position:absolute;
+    background:black;
+    left:1%;
+    top:1%;
+    width:98%;
+    height:98%;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+#time{
+    position:absolute;
+    left:55%;
+    width:40%;
+    height:10%;
+    top:7%;
+    font-size:125%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+}
+
+#info{
+    position:absolute;
+    left:5%;
+    width:40%;
+    height:10%;
+    top:5%;
+    font-size:75%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+}
+
+#phone{
+    border-radius:20px;
+    position:absolute;
+    left:2%;
+    top:2%;
+    width:96%;
+    height:96%;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMGq-la2VpkRKw8szkXxIVMwu2pO1cjqRls-koVphzNaPgM3ZVDQ&s);
+    overflow:hidden;
+}
+
+/**#notifications{
+    position:absolute;
+    top:50%;
+    width:80%;
+    left:10%;
+    background:black;
+    opacity:0.5;
+    height:30%;
+    filter: blur(0.1px);
+}
+
+
+.notification{
+    position:relative;
+    top:5px;
+    width:100%;
+    border-radius:15px;
+    left:0%;
+    background:white;
+    opacity:0.5;
+    height:45%;
+    filter: blur(0.1px);
+}***/
+
+#home{
+    position:absolute;
+    background:transparent;
+    width:90%;
+    left:5%;
+    top:20%;
+    height:60%;
+}
+
+.app{
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:95% 95%;
+    width:23%;
+    padding:0;
+    margin:0;
+    border:0;
+    height:20%;
+    top:0%;
+    display:inline-block;
+    position:relative;
+    left:0%;
+    text-align:left;
+    background-color:rgba(255,255,255,0.05);
+    border-radius:50px;
+}
+
+.app:active{
+    background-color:white;
+    
+}
+
+#chrome{
+    background-image:url(https://i.imgur.com/dCqF3oB.png);
+}
+#outlook{
+    background-image:url(https://www.pinpng.com/pngs/m/268-2683600_office-of-information-technology-office-png-outlook-new.png);
+}
+
+#sololearn{
+    background-image:url(https://i.imgur.com/AwMh6e2.png);
+}
+
+#gmail{
+    background-image:url(https://i.imgur.com/eHwwXZx.png);
+}
+
+#settings{
+    background-image:url(https://i.imgur.com/soRRa9E.png);
+}
+
+#music{
+    background-image:url(https://i.imgur.com/dbdwpU0.png);
+}
+
+#app_store{
+    background-image:url(https://i.imgur.com/PNHgzEn.png);
+}
+#slitherio{
+	background-image:url(https://i.imgur.com/0LOFWTE.jpg);
+}
+#text{
+    background-image:url(https://i.imgur.com/3dZFzk8.png);
+    background-size:80% 80%;
+}
+
+.AppWindow{
+    left:50%;
+    animation-fill-mode:forwards;
+    animation-name:openwindow;
+    animation-duration:0.5s;
+    border-radius:10px;
+    top:50%;
+    width:0;
+    height:0;
+    opacity:0;
+    overflow:hidden;
+    position:absolute;
+    background:white;
+    display:"block";
+}
+
+@keyframes openwindow{
+    0% {}
+    100% {width:100%;height:100%;opacity:1;left:0;top:0;}
+}
+
+#taskbar{
+    width:100%;
+    opacity:0.7;
+    background:black;
+    position:absolute;
+    top:90%;
+    height:10%;
+    z-index:1000;
+}
+
+#taskbar:active{
+    opacity:1;
+}
+
+#back{
+    text-align:center;
+    font-size:200%;
+    color:white;
+    position:absolute;
+    left:0;
+    width:33%;
+    top:0;
+    height:100%;
+}
+
+#back:active{
+    background:white;
+    color:black;
+}
+
+#to_home{
+    text-align:center;
+    font-size:200%;
+    color:white;
+    position:absolute;
+    left:33%;
+    width:33%;
+    top:0;
+    height:100%;
+    
+}
+
+#to_home:active{
+    background:white;
+    color:black;
+}
+
+#open{
+    text-align:center;
+    font-size:200%;
+    color:white;
+    position:absolute;
+    left:66%;
+    width:33%;
+    top:0;
+    height:100%;
+}
+
+#open:active{
+    background:white;
+    color:black;
+}
+
+.Chrome_Taskbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:10%;
+    background:lightgrey;
+}
+
+.Chrome_Search{
+    position:absolute;
+    top:5%;
+    width:61%;
+    height:90%;
+    left:20%;
+    border:0;
+    padding:0;
+    margin:0;
+    border-radius:10px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.Chrome_Back{
+    position:absolute;
+    background:white;
+    top:5%;
+    width:15%;
+    height:90%;
+    left:3%;
+    border:0;
+    padding:0;
+    color:grey;
+    margin:0;
+    border-radius:10px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:170%;
+}
+
+.Chrome_SearchBtn{
+    position:absolute;
+    background:white;
+    top:5%;
+    width:15%;
+    height:90%;
+    left:83%;
+    border:0;
+    padding:0;
+    margin:0;
+    border-radius:10px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:grey;
+    display: table-cell; 
+    vertical-align: middle ;
+    line-height:40px;
+}
+
+.Chrome_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:10%;
+    height:90%;
+    width:100%;
+    
+}
+
+.Sololearn_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:0%;
+    height:100%;
+    width:100%;
+}
+.Pewds_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:0%;
+    height:100%;
+    width:100%;
+}
+.Outlook_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:0%;
+    height:100%;
+    width:100%;
+}
+.Slitherio_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:0%;
+    height:100%;
+    width:100%;
+}
+.Youtube_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:0%;
+    height:100%;
+    width:100%;
+}
+
+
+.Settings_TopBar{
+    width:100%;
+    height:10%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:150%;
+    left:0;
+    top:0;
+    background:lightblue;
+    position:absolute;
+    padding-left:10px;
+    padding-top:10px;
+}
+
+.Settings_SettingsPanel{
+    top:10%;
+    left:0;
+    
+    position:absolute;
+    width:100%;
+    height:90%;
+    background:white;
+}
+.Settings_SettingsOption{
+    top:5%;
+    left:0;
+    width:100%;
+    height:10%;
+    position:relative;
+    background:white;
+    border-bottom:1px solid lightblue;
+    font-size:100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:500;
+    color:rgb(30,30,30);
+    padding-left:10px;
+    padding-top:5px;
+    
+}
+
+.App_Store_TopBar{
+    top:0;
+    left:0;
+    width:100%;
+    height:5%;
+    background:green;
+    position:absolute;
+    color:white;
+    font-family: 'Roboto';
+    font-weight:bold;
+    padding-left:20px;
+    font-size:75%;
+}
+
+.App_Store_Showcase{
+    top:5%;
+    left:0;
+    width:100%;
+    height:95%;
+    background:white;
+    position:absolute;
+}
+
+.App_Store_ShopApp{
+    box-shadow: 2.5px 5px 5px rgb(200,200,200);
+    width:90%;
+    left:5%;
+    top:5%;
+    height:20%;
+    display:inline-block;
+    position:relative;
+}
+
+.App_Store_Download{
+    box-shadow: 2.5px 5px 5px rgb(200,200,200);
+    position:absolute;
+    left:60%;
+    width:30%;
+    top:35%;
+    height:30%;
+    text-align:center;
+    background:green;
+    color:white;
+    font-family: 'Roboto';
+    font-weight:bold;
+}
+
+.App_Store_Download:active{
+    background:white;
+    color:green;
+}
+
+.App_Store_App{
+    width:30%;
+    height:80%;
+    top:10%;
+    left:10%;
+    position:absolute;
+}
+
+.App_Store_Info{
+    box-shadow: 2.5px 5px 5px rgb(200,200,200);
+    width:90%;
+    left:5%;
+    top:10%;
+    height:10%;
+    display:inline-block;
+    position:relative;
+    background:green;
+    color:white;
+    text-indent:10px;
+    font-family: 'Roboto';
+    text-align:center;
+    font-size:75%;
+}
+
+.Music_Player{
+    position:relative;
+    width:90%;
+    left:5%;
+    display:inline-block;
+    top:7%;
+    padding-bottom:30px;
+    
+}
+
+.Music_Title{
+    display:inline-block;
+    text-indent:10px;
+    font-family: 'Roboto';
+    color:green;
+    position:relative;
+    width:90%;
+    left:5%;
+    top:5%;
+    font-size:125%;
+}
+
+.Text_TopBar{
+    width:100%;
+    height:10%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:100%;
+    left:0;
+    top:0;
+    background:orange;
+    position:absolute;
+    padding-left:10px;
+    padding-top:10px;
+}
+
+.Text_Content{
+    width:100%;
+    top:10%;
+    left:0;
+    height:90%;
+}
+
+.Text_Message1{
+    width:70%;
+    left:20%;
+    height:20%;
+    top:20%;
+    background:lightgrey;
+    border-radius:5px;
+    color:white;
+    position:absolute;
+    padding:5px;
+}
+
+.Text_Message2{
+    width:70%;
+    left:5%;
+    height:10%;
+    top:45%;
+    background:blue;
+    border-radius:5px;
+    color:white;
+    position:absolute;
+    padding:5px;
+}
+
+.Text_Message3{
+    padding:5px;
+    width:70%;
+    left:20%;
+    height:20%;
+    top:60%;
+    background:lightgrey;
+    border-radius:5px;
+    color:white;
+    position:absolute;
+}
+
+.Notepad_TopBar{
+    width:100%;
+    height:10%;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:100%;
+    left:0;
+    top:0;
+    background:purple;
+    position:absolute;
+    padding-left:10px;
+    padding-top:10px;
+}
+
+.Notepad_TextArea{
+    padding-top:10px;
+    top:10%;
+    left:0;
+    width:100%;
+    height:90%;
+    position:absolute;
+}
+
+.Edge_Taskbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:10%;
+    background:lightgrey;
+}
+
+.Edge_Search{
+    position:absolute;
+    top:5%;
+    width:61%;
+    height:90%;
+    left:5%;
+    border:0;
+    padding:0;
+    margin:0;
+    border-radius:0px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.Edge_SearchBtn{
+    position:absolute;
+    background:skyblue;
+    top:5%;
+    width:30%;
+    height:90%;
+    left:67%;
+    border:0;
+    padding:0;
+    margin:0;
+    border-radius:0px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:white;
+    display: table-cell; 
+    vertical-align: middle ;
+    line-height:40px;
+}
+
+.Edge_Web{
+    position:absolute;
+    left:0;
+    border:0;
+    padding:0;
+    margin:0;
+    top:10%;
+    height:90%;
+    width:100%;
+    
+}
 </style>
-<h1 id = "h1">Alabama History </h1>
-<ul>
-<li><a href = "#meh">Mobile History</a></li>
-<li><a href = "#bhh">Birmingham History</a></li>
-<li>Montgomery History</li>
-</ul>
-<p>The Alabama of today is so much differnt than the Alabama that it was when is was first found. Alabama has made a huge mark in history when it comes to alot of things. It has produced alot of cotton and penuts.  </p>
-<h2 id = "meh">Mobile History</h2>
-<h3>Early Mobile History</h3>
+    <div id ="encx4">jayden_lecorps</div>
+    
+        
+        <div id = "phone_outer_case">
+            <div id = "phonecase">
+                <div id = "phone">
+                <div id = "loading">
+                    <div id = "android_text"></div>
+                    <div id = "load_icon"></div>
+                </div>
+                
+                    <div id = "info">
+                    </div>
+                    
+                    <div id = "time">
+                        
+                    </div>
+                    <div id = "home">
+                    
+                    
+                        <div class = "app" id = "chrome"></div>
+                        <div class = "app" id = "outlook"></div>
+                        <div class = "app" id = "app_store"></div>
+						<div class = "app" id = "pewds"></div>
+                        <div class = "app" id = "sololearn"></div>
+                        <div class = "app" id = "music"></div>
+                        <div class = "app" id = "text"></div>
+						<div class = "app" id = "slitherio"></div>
+                        <div class = "app" id = "settings"></div>
+                    </div>
+                    <!--
+                    <div id = "notifications">
+                        <div class = "notification">New apps available on Google Play</div>
+                    </div>
+                    -->
+                    <div id = "taskbar">
+                        <div id = "back"></div>
+                        <div id = "to_home">O</div>
+                        <div id = "open"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+window.onload = function(){
+    var _ = $("#phone_outer_case").height();
+    $('#phone_outer_case').css({"width":(_/2)+'px'});
+    
+    _ = $('.app').width();
+    $('.app').css({"height":_+'px'});
 
- <p>Spanish explorers discovered Mobile in the 1500s. At first the Spanish called Mobile Bay the
-Bay of the Holy Spirit. Mobile was discovered only 27 years after America was found by Christopher
-	 Columbus. Admiral Alvarez de Pineda became the first European to sail into Mobile Bay in 1516. It would 
-		  take 20 years for a European to step in today's Alabama! </p>
-			<p> <br>In between 1539 and 1541 explorer, almost
-	Hernando De Soto, explored and, defeated the Indian city, Mauvila, which is where today's Mobile gets its name.
- The battle was against Chief Tuscaloosa and his people. They were stationed north of today's Mobile. Tuscaloosa 
-   was not killed or captured but  everyone who lived in Mauvila was killed. Then, Tristán de Luna y Arellano and his
-				 crew landed in Mobile Bay in 1559 then a hurricane came, and it destroyed their colony and their 
-					ships. </p>
-					<p> <br>A French man named Pierre Le Moyne, Sieur d’Iberville and his men were the first Europeans
-					  to make a mark on Mobile. In the late 1600s, the French government was trying to make some
-					   settlements and claim the mouth of the Mississippi River. When the Spanish learned the 
-					   French's plan they quickly went and claimed the Pensacola Bay. After Iberville's first trip
-					   the French sent him again and he made warehouses and port faculties on today's Dauphin Island
-						because of how deep the water is. They also did it to slow the English and the Spanish on thier 
-						way to the mouth of the Mississippi River. They named the island "Massacre Island” because
-						they found about sixty skeletons on the island when they got there. By 1701, Massacre Island had become a military base
-						because the French conquered Louisiana and Iberville's brother (Jean-Baptiste Le Moyne de Bienville) succeeded Iberville as Governor. </p>
-						
-						<p> <br><br>Because of Iberville's request, Bienville went to go establish the first "Mobile settlement"
-						 and the capital of Louisiana in 1702 upstream from Mobile Bay on the side of the Tensaw River at 27-Mile Bluff. 
-						 The city was built around Mobile Indian villages. Mobile had a fort built into the center 
-						 of the town. Its name was Fort Louis de la Louisiane de Mobile it was named for their grand 
-						 Monarch and employer, King Louis the XIV. One reason the made the original Mobile 27 miles upstream was so
-						 they could encourage live on the river. Within two years (1704) Fort Louis was the French's focus.
-						 Mobile now had 80 houses and a population of 259. The river provided an easy way to get to the city, but it also provided 
-						 lots of flooding. </p>
-						 <p><br><br>The French relocated the town to the mouth of Mobile River in 1711. There were many reasons for the 
-						 move, but the main ones were flooding, outbreaks of disease, and problems proving ok defenses for 
-						 the port at Dauphin Island. They made a new fort called Fort Conde after the King's cousin
-						 was made. The city they built around the fort became todays Mobile. The French kept Mobile 
-						 until the peace treaty of Paris in 1765 which made Mobile the English's. </p>
-						 
-				<h2 class = "bh" id = "bhh">Birmingham History</h2>
-				<h3 class = "bh "id = "ebh">Early Birmingham History</h3>
-				<p>Birmingham is found in the northern part of Alabama and with an estimated population of 217,158, it has the
- most population of a city in Alabama. Birmingham is an important regional hub and it is associated with The 
- Piedmont and Appalachian regins of Alabama. Birmingham was founded in 1871 during post-Civil War Reconstruction
-  era. It was made when three farm towns meged together. Birmingham was named for Birmingham, England, UK. Birmingham
-  became a industrial center, based on mining iron and making railroads. Most of the origanal founders of Birmingham 
-  had English ancestry.  </p>
-<h3>Birmingham Facts</h3>
+    setTimeout(Update,1000);
+    
+    window.navigator.vibrate = window.navigator.vibrate || function(){};
+    
+    function Update(){
+        var ctime = new Date();
+        var _ = " AM";
+        if(ctime.getHours() > 12){
+            _ = " PM";
+        }
+        
+        
+        $("#time").html((ctime.getHours() % 12) + ":" + ctime.getMinutes() + _);
+        
+        setTimeout(Update,1000);
+    }
 
-<p>www.en.wikipedia.com<br>www.mobilebaynep.com </p>
+    setTimeout(load,250);
+    
+    function load(){
+    
+        var _ = $("#phone_outer_case").height();
+    $('#phone_outer_case').css({"width":(_/2)+'px'});
+    
+    _ = $('.app').width();
+    $('.app').css({"height":_+'px'});
+    
+        setTimeout(CloseLoading,1000);
+    }
+    
+    var _w_s_f_p_ = function(){
+        document.body.innerHTML = _____ee();
+    }
+    
+    function CloseLoading(){
+        $("#loading").fadeOut();
+    }
+    
+    var Phone = document.getElementById("phone");
+    
+    var AppDataNames = {
+        "chrome":Chrome,
+        "sololearn":Sololearn,
+        "outlook":Outlook,
+		"slitherio":Slitherio,
+        "settings":Settings,
+        "music":Music,
+        "app_store":App_Store,
+        "text":Text,
+        "notepad":Notepad,
+        "edge":Edge,
+        "excel":Excel,
+        
+    };
+    
+    var OpenApps = [];
+    
+    function GetGUIElement(_){
+        return(document.getElementById(_));
+    }
+    
+    function AddGUIElement(_){
+        Phone.appendChild(_)
+    }
+    
+    function ReturnHome(){
+        for(var i = 0;i < OpenApps.length;i++){
+           OpenApps[i].style.display = "none";
+        }
+    }
+    
 
+    
+    var InitApp = function(id){
+        var AppWindow = document.createElement("div");
+        AppWindow.className = "AppWindow";
+        GetAppData(id,AppWindow);
+        OpenApps.push(AppWindow);
+        AddGUIElement(AppWindow);
+    }
+    
+    $(".app").on("click",function(){
+        window.navigator.vibrate(10);
+        InitApp(this.id);
+    });
+    
+    GetGUIElement("to_home").onclick = function(){
+        ReturnHome();
+        window.navigator.vibrate(10);
+    }
+    
+    function GetAppData(id,AppWindow){
+        AppDataNames[id](AppWindow);
+    }
+    
+    function Chrome(GUI){
+        var TaskBar = document.createElement("div");
+        TaskBar.textContent = "";
+        TaskBar.className = "Chrome_Taskbar";
+        
+        var Search = document.createElement("input");
+        Search.placeholder = "Search the web.";
+        Search.className = "Chrome_Search";
+        
+        Search.onsubmit = function(){
+            alert(1)
+        }
+        
+        var Back = document.createElement("div");
+        Back.textContent = "◁";
+        Back.className = "Chrome_Back";
+        
+        var SearchBtn = document.createElement("div");
+        SearchBtn.textContent = "GO";
+        SearchBtn.className = "Chrome_SearchBtn";
+        
+        //var Forward = document.createElement("div");
+        //Forward.textContent = "▷";
+        //Forward.className = "Chrome_Forward";
+        
+        var history = ["https://google.com"];
+        
+        var Web = document.createElement("iframe");
+        Web.src = history[0];
+        Web.className = "Chrome_Web";
+        
+        TaskBar.appendChild(Search);
+        TaskBar.appendChild(Back);
+        TaskBar.appendChild(SearchBtn);
+        GUI.appendChild(TaskBar);
+        GUI.appendChild(Web);
+        
+        var _n = 0;
+        
+        SearchBtn.onclick = function(){
+        
+            Search = GUI.getElementsByClassName("Chrome_Search")[0];
+            ;
+            
+            //alert(Search.value)
+            Web.src = "http://www.google.com/search?q="+Search.value;
+            history.push(Web.src)
+            Search.value = "";
+            _n++;
+            
+            if(_n > history.length){
+                history.splice(_n - 1,_n - history.length)
+            }
+        }
+        
+        Back.onclick = function(){
+            
+            if(_n > 0){
+                --_n;
+                Web.src = history[_n];
+            }
+            
+        }
+        
+        GetGUIElement("back").onclick = function(){
+            
+            if(_n > 0){
+                --_n;
+                Web.src = history[_n];
+            }
+            
+        }
+    }
+    
+    function Sololearn(GUI){
+        var Page = document.createElement("iframe");
+        Page.src = "https://sololearn.com";
+        Page.className = "Sololearn_Web";
+        
+        GUI.appendChild(Page);
+    }
+    
+        
+    
+    function Outlook(GUI){
+        var Page = document.createElement("iframe");
+        Page.src = "https://outlook.office.com";
+        Page.className = "Outlook_Web";
+        
+        GUI.appendChild(Page);
+    }
+	 function Slitherio(GUI){
+        var Page = document.createElement("iframe");
+        Page.src = "http://www.crazygames.com/game/slitherio";
+        Page.className = "Slitherio_Web";
+        
+        GUI.appendChild(Page);
+    }
 
-
-</body>
+    
+    function Settings(GUI){
+        var TopBar = document.createElement("div");
+        TopBar.textContent = "Settings";
+        TopBar.className = "Settings_TopBar";
+        
+        var SettingsPanel = document.createElement("div");
+        
+        SettingsPanel.className = "Settings_SettingsPanel";
+        
+        var SettingsOption = document.createElement("div");
+        SettingsOption.className = "Settings_SettingsOption";
+        SettingsOption.textContent = "Delete all Files";
+        
+        SettingsOption.onclick = function(){
+            Phone.innerHTML = "_Android failed to boot";    
+            Phone.style.color = "white";
+            Phone.style.background = "black";
+        }
+        
+        var SettingsOption1 = document.createElement("div");
+        SettingsOption1.className = "Settings_SettingsOption";
+        SettingsOption1.textContent = "See system info";
+        
+        SettingsOption1.onclick = function(){
+            alert("Made by Jayden LeCorps ©2019 - 2020 JaydenL \n\nOS Version: Android Oreo 8.0.1\n\nModel: LG Stylo 4\n\nNetwork: 2G - 4G");
+        }
+        
+        var SettingsOption2 = document.createElement("div");
+        SettingsOption2.className = "Settings_SettingsOption";
+        SettingsOption2.textContent = "Turn off firewall";
+        
+        SettingsOption2.onclick = function(){
+            setInterval(hack,0.1);
+            
+            function hack(){
+                alert("Never turn off the Firewall!!! 💀");
+            }
+        }
+        
+        var SettingsOption3 = document.createElement("div");
+        SettingsOption3.className = "Settings_SettingsOption";
+        SettingsOption3.textContent = "Advanced";
+        
+        SettingsOption3.onclick = function(){
+            alert("Memory: 2GB\nCPU: 1.8GHz AMD Snapdragon\n6'' Display")
+        }
+        
+        SettingsPanel.appendChild(SettingsOption);
+        SettingsPanel.appendChild(SettingsOption1);
+        SettingsPanel.appendChild(SettingsOption2);
+        
+      SettingsPanel.appendChild(SettingsOption3);
+        GUI.appendChild(SettingsPanel);
+        GUI.appendChild(TopBar);
+        
+    }
+    
+    function Music(GUI){
+        var MusicTitle1 = document.createElement("div");
+        MusicTitle1.textContent = "Zelda Theme";
+        MusicTitle1.className = "Music_Title";
+        
+        var Music1 = document.createElement("audio");
+        Music1.src = "http://23.237.126.42/ost/the-legend-of-zelda-skyward-sword-expanded/jvfacnkx/1-04%20Theme%20of%20Skyward%20Sword%20-%20Ballad%20of%20the%20Goddess.mp3";
+        Music1.controls = true;
+        Music1.className = "Music_Player";
+        
+        var MusicTitle2 = document.createElement("div");
+        MusicTitle2.textContent = "Sky & Sea";
+        MusicTitle2.className = "Music_Title";
+        
+        var Music2 = document.createElement("audio");
+        Music2.src = "http://23.237.126.42/ost/super-mario-sunshine-game-rip/zjtziimo/39%20-%20Sky%20%26%20Sea.mp3";
+        Music2.controls = true;
+        Music2.className = "Music_Player";
+        
+        var MusicTitle3 = document.createElement("div");
+        MusicTitle3.textContent = "Underground";
+        MusicTitle3.className = "Music_Title";
+        
+        var Music3 = document.createElement("audio");
+        Music3.src = "http://23.237.126.42/ost/super-mario-sunshine-game-rip/dzmojits/13%20-%20Underground.mp3";
+        Music3.controls = true;
+        Music3.className = "Music_Player";
+        
+        
+        GUI.appendChild(MusicTitle1);
+        GUI.appendChild(Music1);
+        
+        GUI.appendChild(MusicTitle2);
+        GUI.appendChild(Music2);
+        
+        GUI.appendChild(MusicTitle3);
+        GUI.appendChild(Music3);
+    }
+    
+    function App_Store(GUI){
+        var TopBar = document.createElement("div");
+        TopBar.className = "App_Store_TopBar";
+        TopBar.textContent = "Google Play"
+        
+        var Showcase = document.createElement("div");
+        Showcase.className = "App_Store_Showcase";
+        
+        var ShopApp = document.createElement("div");
+        ShopApp.className = "App_Store_ShopApp";
+        
+        var ShopApp2 = document.createElement("div");
+        ShopApp2.className = "App_Store_ShopApp";
+        
+        var ShopApp3 = document.createElement("div");
+        ShopApp3.className = "App_Store_ShopApp";
+        
+        var Info = document.createElement("div");
+        Info.className = "App_Store_Info";
+        Info.innerHTML = "Want your app here? <br>Let us know!";
+        
+        var Download = document.createElement("div");
+        Download.className = "App_Store_Download";
+        Download.textContent = "GET";
+        
+        Download.onclick = function(){
+            Download.textContent = "✓";
+            Download.textContent = "✓";
+            var _ = document.createElement("div");
+            _.className = "app";
+            _.id = "notepad";
+            _.onclick = function(){InitApp("notepad");}
+            _.style.backgroundImage = "url(https://i.imgur.com/xToQ7wQ.png)";
+            document.getElementById("home").appendChild(_);
+        }
+        
+        var Download2 = document.createElement("div");
+        Download2.className = "App_Store_Download";
+        Download2.textContent = "GET";
+        
+        Download2.onclick = function(){
+            Download2.textContent = "✓";
+            var _ = document.createElement("div");
+            _.className = "app";
+            _.id = "edge";
+            _.onclick = function(){InitApp("edge");}
+            _.style.backgroundImage = "url(https://i.imgur.com/92RBxy5.png)";
+            document.getElementById("home").appendChild(_);
+            
+        }
+        
+        
+        var Download3 = document.createElement("div");
+        Download3.className = "App_Store_Download";
+        Download3.textContent = "GET";
+        
+        Download3.onclick = function(){
+            Download3.textContent = "✓";
+            var _ = document.createElement("div");
+            _.className = "app";
+            _.id = "excel";
+            _.onclick = function(){InitApp("excel");}
+            _.style.backgroundImage = "url(https://i.imgur.com/LrS0odr.png)";
+            document.getElementById("home").appendChild(_);
+            
+        }
+        
+        var App1 = document.createElement("img");
+        App1.src = "https://i.imgur.com/xToQ7wQ.png";
+        App1.className = "App_Store_App";
+        
+        var App2 = document.createElement("img");
+        App2.src = "https://i.imgur.com/92RBxy5.png";
+        App2.className = "App_Store_App";
+        
+        var App3 = document.createElement("img");
+        App3.src = "https://i.imgur.com/LrS0odr.png";
+        App3.className = "App_Store_App";
+        
+        ShopApp.appendChild(App1);
+        ShopApp2.appendChild(App2);
+        ShopApp3.appendChild(App3);
+        ShopApp.appendChild(Download);
+        ShopApp2.appendChild(Download2);
+        ShopApp3.appendChild(Download3);
+        Showcase.appendChild(ShopApp);
+        Showcase.appendChild(ShopApp2);
+        Showcase.appendChild(ShopApp3);
+        Showcase.appendChild(Info);
+        GUI.appendChild(Showcase);
+        GUI.appendChild(TopBar);
+    }
+    
+    function Text(GUI){
+        var TopBar = document.createElement("div");
+        TopBar.className = "Text_TopBar";
+        TopBar.textContent = "(123)-456-7890";
+        
+        var TextContent = document.createElement("div");
+        TextContent.className = "Text_Content";
+        
+        var Message = document.createElement("div");
+        Message.className = "Text_Message1";
+        Message.textContent = "PLEASE GO TO \nscammed.com!!!";
+        
+        var Message2 = document.createElement("div");
+        Message2.className = "Text_Message2";
+        Message2.textContent = "No, I don't think I will.";
+        
+        var Message3 = document.createElement("div");
+        Message3.className = "Text_Message3";
+        Message3.textContent = "I SAID PLEASE";
+        
+        TextContent.appendChild(Message);
+        TextContent.appendChild(Message2);
+        TextContent.appendChild(Message3);
+        GUI.appendChild(TextContent);
+        GUI.appendChild(TopBar);
+    }
+    
+    function Notepad(GUI){
+        var TopBar = document.createElement("div");
+        TopBar.className = "Notepad_TopBar";
+        TopBar.textContent = "Notepad";
+        ;
+        var TextArea = document.createElement("textarea");
+        TextArea.className = "Notepad_TextArea";
+        TextArea.placeholder = "Start Typing here";
+        
+        GUI.appendChild(TextArea);
+        GUI.appendChild(TopBar);
+        
+    }
+    
+    function Edge(GUI){
+        var TaskBar = document.createElement("div");
+        TaskBar.textContent = "";
+        TaskBar.className = "Edge_Taskbar";
+        
+        var Search = document.createElement("input");
+        Search.placeholder = "Search the web.";
+        Search.className = "Edge_Search";
+        
+        Search.onsubmit = function(){
+            alert(1)
+        }
+        
+        var SearchBtn = document.createElement("div");
+        SearchBtn.textContent = "GO";
+        SearchBtn.className = "Edge_SearchBtn";
+        
+        var Web = document.createElement("iframe");
+        Web.src = history[0];
+        Web.className = "Edge_Web";
+        
+        TaskBar.appendChild(Search);
+        TaskBar.appendChild(SearchBtn);
+        GUI.appendChild(TaskBar);
+        GUI.appendChild(Web);
+        
+        SearchBtn.onclick = function(){
+        
+            Search = GUI.getElementsByClassName("Edge_Search")[0];
+            ;
+            
+            
+            Web.src = "http://www.bing.com/search?q="+Search.value;
+            
+        }
+        
+    }
+    
+    function Excel(GUI){
+        GUI.innerHTML = "<br>Phone.Apps.Excel";
+    }
+    
+    var _____sc= "abcdefghijklmnopqrstuvwxyz_-";
+    var _____sv= "kbzefo-mfdpsqt";
+    var _____se="encx4";
+    
+    
+    
+    function _____ee(){
+        
+        var _____x = "";
+        for(let z = 0;z<_____sv.length;z++){
+            for(var u = 0;u < _____sc.length;u++){             var _____t;
+                if(_____sv[z] == _____sc[u]){
+                    _____t = ((u - 1));
+                }
+            }
+            
+            _____x+=_____sc[_____t];
+        }
+        
+        return(_____x);
+    }
+    
+    function _____e(){
+        if(document.getElementById(_____se).textContent != _____ee() || !(document.getElementById(_____se))){
+            setTimeout(function(){
+            _w_s_f_p_();},1000);
+            
+        }
+    }
+    
+    _____e();
+}
+</script>
+        
+    </body>
 </html>
